@@ -15,7 +15,7 @@ include $(DEVKITARM)/3ds_rules
 # DATA is a list of directories containing data files
 # INCLUDES is a list of directories containing header files
 #---------------------------------------------------------------------------------
-TARGET		:=	3ds-library
+TARGET := $(shell grep -m1 '^Title:' app.cfg | sed 's/^Title:[[:space:]]*//')
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data
